@@ -1,0 +1,8 @@
+{
+  "name": "DOH",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "highlightjs": "~8.0.0"
+  }
+}
