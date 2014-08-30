@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div>
+        <h1>Admin - {{ identifier_label }}</h1>
+
+        <div class="clearfix">
+            <a href="{{ path(routes.new) }}" class="btn btn-success pull-right">New</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ identifier_label }}</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td><a href="{{ path(routes.edit, {id: item.id}) }}">{{ item }}</a></td>
+                        <td>actions</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

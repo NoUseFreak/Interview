@@ -1,0 +1,22 @@
+{% extends 'NoUseFreakInterviewBundle:Test:intro.html.twig' %}
+
+{% block quiz_title %}{{ group.title }}{% endblock %}
+
+{% block quiz %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block quiz_controls %}
+    {% if step_info.current > 1 %}
+        <button name="previous" type="submit" class="btn btn-primary">Previous</button>
+    {% endif %}
+    {% if step_info.current <= step_info.total %}
+        <button name="next" type="submit" class="btn btn-primary">
+            {% if step_info.current == step_info.total %}
+                Finish
+            {% else %}
+                Next
+            {% endif %}
+        </button>
+    {% endif %}
+{% endblock %}

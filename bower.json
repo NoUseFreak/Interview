@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "bootstrap": "latest",
-    "highlightjs": "~8.0.0"
+    "highlightjs": "~8.0.0",
+    "multiselect": "~0.9.12"
   }
 }

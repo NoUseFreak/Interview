@@ -1,0 +1,87 @@
+nousefreak_interview_homepage:
+    path:     /
+    defaults: { _controller: NoUseFreakInterviewBundle:Static:index }
+
+###
+# Test
+###
+
+nousefreak_test_intro:
+    path:     /intro
+    defaults: { _controller: NoUseFreakInterviewBundle:Test:intro }
+nousefreak_test_form:
+    path:     /test/{step}
+    defaults: { _controller: NoUseFreakInterviewBundle:Test:form }
+    requirements:
+        step:  \d+
+nousefreak_test_confirm:
+    path:     /test/confirm
+    defaults: { _controller: NoUseFreakInterviewBundle:Test:confirm }
+
+###
+# Admin
+###
+
+nousefreak_interview_admin:
+    path:     /admin/
+    defaults: { _controller: NoUseFreakInterviewBundle:Admin:index }
+    
+nousefreak_interview_admin_users:
+    path:     /admin/users
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminUser:list }
+nousefreak_interview_admin_users_new:
+    path:     /admin/users/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminUser:new }
+nousefreak_interview_admin_users_edit:
+    path:     /admin/users/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminUser:edit }
+
+nousefreak_interview_admin_questions:
+    path:     /admin/questions
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestion:list }
+nousefreak_interview_admin_questions_new:
+    path:     /admin/questions/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestion:new }
+nousefreak_interview_admin_questions_edit:
+    path:     /admin/questions/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestion:edit }
+
+nousefreak_interview_admin_question_groups:
+    path:     /admin/question_groups
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionGroup:list }
+nousefreak_interview_admin_question_groups_new:
+    path:     /admin/question_groups/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionGroup:new }
+nousefreak_interview_admin_question_groups_edit:
+    path:     /admin/question_groups/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionGroup:edit }
+
+nousefreak_interview_admin_question_difficulty:
+    path:     /admin/question_difficulty
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionDifficulty:list }
+nousefreak_interview_admin_question_difficulty_new:
+    path:     /admin/question_difficulty/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionDifficulty:new }
+nousefreak_interview_admin_question_difficulty_edit:
+    path:     /admin/question_difficulty/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionDifficulty:edit }
+    
+nousefreak_interview_admin_question_category:
+    path:     /admin/question_category
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionCategory:list }
+nousefreak_interview_admin_question_category_new:
+    path:     /admin/question_category/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionCategory:new }
+nousefreak_interview_admin_question_category_edit:
+    path:     /admin/question_category/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionCategory:edit }
+
+nousefreak_interview_admin_question_questionnaire:
+    path:     /admin/question_questionnaire
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionnaire:list }
+nousefreak_interview_admin_question_questionnaire_new:
+    path:     /admin/question_questionnaire/new
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionnaire:new }
+nousefreak_interview_admin_question_questionnaire_edit:
+    path:     /admin/question_questionnaire/edit/{id}
+    defaults: { _controller: NoUseFreakInterviewBundle:AdminQuestionnaire:edit }

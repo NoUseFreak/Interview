@@ -51,6 +51,7 @@ module.exports = function (grunt) {
                 files: {
                     'web/assets/css/app.min.css': [
                         'web/vendor/highlightjs/styles/github.css',
+                        'web/vendor/multiselect/css/multi-select.css',
                         'app/grunt/css/app.css'
                     ]
                 }
@@ -70,7 +71,8 @@ module.exports = function (grunt) {
                 files: {
                     'app/grunt/js/vendors.min.js': [
                         'web/vendor/jquery/dist/jquery.js',
-                        'web/vendor/highlightjs/highlight.pack.js'
+                        'web/vendor/highlightjs/highlight.pack.js',
+                        'web/vendor/multiselect/js/jquery.multi-select.js'
                     ]
                 }
             },

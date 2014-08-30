@@ -1,0 +1,7 @@
+parameters:
+#    no_use_freak_interview.example.class: NoUseFreak\InterviewBundle\Example
+
+services:
+#    no_use_freak_interview.example:
+#        class: %no_use_freak_interview.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

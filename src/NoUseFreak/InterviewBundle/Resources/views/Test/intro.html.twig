@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block progress %}
+    {% if step_info.current > 1 %}
+        {% set percentage = ((step_info.current-1) / step_info.total * 100)|round %}
+    {% else %}
+        {% set percentage = 0 %}
+    {% endif %}
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percentage }}%;">
+            {{ percentage }}%
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>{% block quiz_title %}Intro{% endblock %}</h1>
+
+        <form action="" method="post">
+            <div class="quiz">
+                {% block quiz %}
+                    some info about the tests.
+                {% endblock %}
+            </div>
+
+            <div class="controls">
+                {% block quiz_controls %}
+                    {% if step_info.current > 1 %}
+                        <a href="{{ path('nousefreak_test_form', {'step': step_info.current-1}) }}" class="btn btn-primary">
+                            Previous
+                        </a>
+                    {% endif %}
+
+                    {% if step_info.current <= step_info.total %}
+                        <a href="{{ path('nousefreak_test_form', {'step': step_info.current+1}) }}" class="btn btn-success">
+                            {% if step_info.current == 0 %}
+                                Start
+                            {% elseif step_info.current == step_info.total %}
+                                Finish
+                            {% else %}
+                                Next
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

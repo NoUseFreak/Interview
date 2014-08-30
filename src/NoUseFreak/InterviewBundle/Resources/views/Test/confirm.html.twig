@@ -1,0 +1,34 @@
+{% extends 'NoUseFreakInterviewBundle:Test:intro.html.twig' %}
+
+{% block progress %}
+   {% set percentage = 100 %}
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percentage }}%;">
+            {{ percentage }}%
+        </div>
+    </div>
+{% endblock %}
+
+{% block quiz_title %}Confirm{% endblock %}
+
+{% block quiz %}
+    {% for key, group in groups %}
+        <h2>{{ group.title }}</h2>
+        {% for question in group.questions %}
+            {% if answer.data[key+1]['q_' ~ question.id] is defined %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ question.question }}</div>
+                    <div class="panel-body">
+                        {{ answer.data[key+1]['q_' ~ question.id].answer|default('/') }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+
+{% block quiz_controls %}
+    <a href="{{ path('nousefreak_test_form', {'step': groups|length}) }}" class="btn btn-primary">
+        Edit
+    </a>
+{% endblock %}

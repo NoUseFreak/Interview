@@ -1,0 +1,6 @@
+no_use_freak_interview:
+    resource: "@NoUseFreakInterviewBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

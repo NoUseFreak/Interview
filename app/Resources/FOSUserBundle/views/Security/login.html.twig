@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-login">
+        <div class="form-wrapper">
+            <form role="form" action="{{ path("fos_user_security_check") }}" method="post">
+                <h2>Login</h2>
+                {% if error %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        {{ error|trans({}, 'FOSUserBundle') }}
+                    </div>
+                {% endif %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <input type="text" autofocus="" required="required" name="_username" placeholder="Email" class="form-control" value="{{ last_username }}">
+                <input type="password" required="" name="_password" placeholder="Password" class="form-control">
+
+                <button type="submit" name="_submit" class="btn pull-right btn-success">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }} <i class="fa fa-arrow-circle-o-right"></i></button>
+            </form>
+        </div>
+    </div>
+{% endblock body %}

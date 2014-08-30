@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div>
+        <h1>Welcome!</h1>
+        <p class="lead">
+            Ready to start the interview?
+        </p>
+
+        <a href="{{ path('nousefreak_test_intro') }}" class="btn btn-success">Take the test!</a>
+    </div>
+{% endblock %}
